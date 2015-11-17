@@ -3,309 +3,300 @@
 atom-text-editor, :host {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
-
-  .wrap-guide {
-    background-color: @syntax-wrap-guide-color;
-  }
-
-  .indent-guide {
-    color: @syntax-indent-guide-color;
-  }
-
-  .invisible-character {
-    color: @syntax-invisible-character-color;
-  }
-
-  .gutter {
-    background-color: @syntax-gutter-background-color;
-    color: @syntax-gutter-text-color;
-
-    .line-number {
-      &.cursor-line {
-        background-color: @syntax-gutter-background-color-selected;
-        color: @syntax-gutter-text-color-selected;
-      }
-
-      &.cursor-line-no-selection {
-        color: @syntax-gutter-text-color-selected;
-      }
-    }
-  }
-
-  .gutter .line-number.folded,
-  .gutter .line-number:after,
-  .fold-marker:after {
-    color: @light-gray;
-  }
-
-  .invisible {
-    color: @syntax-text-color;
-  }
-
-  .cursor {
-    color: @syntax-cursor-color;
-  }
-
-  .selection .region {
-    background-color: @syntax-selection-color;
-  }
 }
 
-atom-text-editor .search-results .marker .region,
-:host .search-results .marker .region {
+atom-text-editor .gutter, :host .gutter {
+  background-color: @syntax-gutter-background-color;
+  color: @syntax-gutter-text-color;
+}
+
+atom-text-editor .gutter .line-number.cursor-line, :host .gutter .line-number.cursor-line {
+  background-color: @syntax-gutter-background-color-selected;
+  color: @syntax-gutter-text-color-selected;
+}
+
+atom-text-editor .gutter .line-number.cursor-line-no-selection, :host .gutter .line-number.cursor-line-no-selection {
+  color: @syntax-gutter-text-color-selected;
+}
+
+atom-text-editor .wrap-guide, :host .wrap-guide {
+  color: @syntax-wrap-guide-color;
+}
+
+atom-text-editor .indent-guide, :host .indent-guide {
+  color: @syntax-indent-guide-color;
+}
+
+atom-text-editor .invisible-character, :host .invisible-character {
+  color: @syntax-invisible-character-color;
+}
+
+atom-text-editor .search-results .marker .region, :host .search-results .marker .region {
   background-color: transparent;
-  border: 1px solid @syntax-result-marker-color;
+  border: @syntax-result-marker-color;
 }
 
-atom-text-editor .search-results .marker.current-result .region,
-:host .search-results .marker.current-result .region {
-  border: 1px solid @syntax-result-marker-color-selected;
+atom-text-editor .search-results .marker.current-result .region, :host .search-results .marker.current-result .region {
+  border: @syntax-result-marker-color-selected;
 }
 
-.comment {
-  color: @light-gray;
+atom-text-editor.is-focused .cursor, :host(.is-focused) .cursor {
+  border-color: @syntax-cursor-color;
 }
 
-.entity {
-  &.name.type {
-    color: @light-orange;
-    text-decoration: underline;
-  }
-
-  &.other.inherited-class {
-    color: @green;
-  }
+atom-text-editor.is-focused .selection .region, :host(.is-focused) .selection .region {
+  background-color: @syntax-selection-color;
 }
 
-.keyword {
-  color: @purple;
-
-  &.control {
-    color: @purple;
-  }
-
-  &.operator {
-    color: @syntax-text-color;
-  }
-
-  &.other.special-method {
-    color: @blue;
-  }
-
-  &.other.unit {
-    color: @orange;
-  }
+atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-editor.is-focused .line.cursor-line, :host(.is-focused) .line-number.cursor-line-no-selection, :host(.is-focused) .line.cursor-line {
+  background-color: #3c3836;
 }
 
-.storage {
-  color: @purple;
+.punctuation.definition.tag {
+  color: #83a598;
+}
+
+.punctuation.definition.entity {
+  color: #d3869b;
 }
 
 .constant {
-  color: @orange;
-
-  &.character.escape {
-    color: @cyan;
-  }
-
-  &.numeric {
-    color: @orange;
-  }
-
-  &.other.color {
-    color: @cyan;
-  }
-
-  &.other.symbol {
-    color: @green;
-  }
-}
-
-.variable {
-  color: @red;
-
-  &.interpolation {
-    color: darken(@red, 10%);
-  }
-
-  &.parameter.function {
-    color: @syntax-text-color;
-  }
-}
-
-.invalid.illegal {
-  background-color: @red;
-  color: @syntax-background-color;
-}
-
-.string {
-  color: @green;
-
-
-  &.regexp {
-    color: @cyan;
-
-    .source.ruby.embedded {
-      color: @orange;
-    }
-  }
-
-  &.other.link {
-    color: @red;
-  }
-}
-
-.punctuation {
-  &.definition {
-    &.comment {
-      color: @light-gray;
-    }
-
-    &.string,
-    &.variable,
-    &.parameters,
-    &.array {
-      color: @syntax-text-color;
-    }
-
-    &.heading,
-    &.identity {
-      color: @blue;
-    }
-
-    &.bold {
-      color: @light-orange;
-      font-weight: bold;
-    }
-
-    &.italic {
-      color: @purple;
-      font-style: italic;
-    }
-  }
-
-  &.section.embedded {
-    color: darken(@red, 10%);
-  }
-
-}
-
-.support {
-  &.class {
-    color: @light-orange;
-  }
-
-  &.function  {
-    color: @cyan;
-
-    &.any-method {
-      color: @blue;
-    }
-  }
+  color: #d3869b;
 }
 
 .entity {
-  &.name.function {
-    color: @blue;
+  color: @green;
+}
+
+.keyword.operator.comparison, .keyword.operator, .keyword.operator.symbolic, .keyword.operator.string, .keyword.operator.assignment, .keyword.operator.arithmetic, .keyword.operator.class, .keyword.operator.key, .keyword.operator.logical {
+  color: #fe8019;
+}
+
+.keyword, .keyword.operator.new, .keyword.other, .keyword.control {
+  color: #fa5c4b;
+}
+
+.storage {
+  color: #fa5c4b;
+}
+
+.string:not(.string.unquoted.old-plist:not(.string.unquoted.heredoc)), .string.unquoted.heredoc .string, .string .constant.character.escape {
+  color: #6ce75e;
+}
+
+.string.quoted.double.html .invalid.illegal.bad-ampersand.html {
+  color: #6ce75e;
+}
+
+.comment {
+  //font-style: italic;
+  // color: #928374;
+  color: #928C86;
+}
+
+.string.regexp .constant.character.escape {
+  color: #6ce75e;
+}
+
+.support {
+  color: #fabd2f;
+}
+
+.misc {
+  color: #fdf3bf;
+}
+
+.variable {
+  color: #fdf4c1;
+}
+
+.variable.language {
+  color: #fdf4c1;
+}
+
+.meta.function-call {
+  color: #fdf4c1;
+}
+
+.invalid {
+  color: #fdf4c1;
+  background-color: #932b1e;
+}
+
+.text .source, .string.unquoted.heredoc, .source .source {
+  color: #5ff546;
+}
+
+.string.quoted .source {
+  color: #6ce75e;
+}
+
+.string {
+  color: #6ce75e;
+}
+
+.support.constant {
+  color: #fabd2f;
+}
+
+.support.class {
+  color: @green;
+}
+
+
+.constant.other.color.rgb-value {
+  color: #83a598;
+   .punctuation.definition {
+    color: inherit;
   }
+}
 
-  &.name.class, &.name.type.class {
-    color: @light-orange;
+.meta.selector.css .entity.name.tag {
+  color: #fa5c4b;
+}
+
+.meta.selector.css, .entity.other.attribute-name.id {
+  color: #6ce75e;
+}
+
+.meta.selector.css .entity.other.attribute-name.class {
+  color: #6ce75e;
+}
+
+.entity.other.attribute-name.placeholder.scss {
+  color: #d5859b;
+  .punctuation.definition.entity.scss {
+    color: inherit;
   }
+}
 
-  &.name.section {
-    color: @blue;
-  }
+.support.type.property-name.css {
+  color: @green;
+}
 
-  &.name.tag {
-    color: @red;
-    text-decoration: underline;
-  }
+.meta.preprocessor.at-rule .keyword.control.at-rule {
+  color: #fabd2f;
+}
 
-  &.other.attribute-name {
-    color: @orange;
+.meta.property-value .constant {
+  color: #fabd2f;
+}
 
-    &.id {
-      color: @blue;
+.meta.property-value .support.constant.named-color.css {
+  color: #fe8019;
+}
+
+.meta.constructor.argument.css {
+  color: #fabd2f;
+}
+
+.meta.diff, .meta.diff.header {
+  color: #fdf4c1;
+  background-color: #83a598;
+}
+
+//  MARKDOWN
+
+.markup.deleted {
+  color: #fdf4c1;
+  background-color: #fa5c4b;
+}
+
+.markup.changed {
+  color: #fdf4c1;
+  background-color: #fabd2f;
+}
+
+.markup.inserted {
+  color: #fdf4c1;
+  background-color: @green;
+}
+
+.markup.bold {
+  font-weight: bold;
+}
+
+.markup.italic {
+  font-style: italic;
+}
+
+.markup.heading {
+  font-weight: bold;
+  color: @green;
+}
+
+.entity.name.type.class.php {
+  color: @green;
+}
+
+.keyword.other.phpdoc {
+  color: #928374;
+}
+
+.constant.numeric.css, .keyword.other.unit.css {
+  color: #d3869b;
+}
+
+.punctuation.definition.entity.css,.punctuation.definition.entity.scss {
+  color: inherit;
+}
+
+.variable.language.js {
+  color: #fabd2f;
+}
+
+.storage.type.dired.item.directory, .dired.item.directory {
+  color: @green;
+}
+
+.entity.name.tag.block.any.html, .meta.tag.inline.any.html, .entity.name.tag.inline.any.html, .meta.tag.block.any.html {
+  color: @green;
+}
+
+.entity.other.attribute-name.html {
+  color: #6fa598;
+}
+.constant.character.entity.html, .punctuation.definition.entity.html {
+  color: #d5859b;
+}
+.string.quoted.double.html {
+  color: #6ce75e;
+}
+
+.entity.other.attribute-name.attribute.scss {
+  color: #CC6666;
+}
+
+
+atom-text-editor , :host {
+  .gutter {
+    .line-number.linter-warning .icon-right:before {
+      color: @syntax-color-modified;
+    }
+    .line-number.linter-error .icon-right:before {
+      color: @syntax-color-removed;
     }
   }
 }
 
-.meta {
-  &.class {
-    color: @light-orange;
-  }
-
-  &.link {
-    color: @orange;
-  }
-
-  &.require {
-    color: @blue;
-  }
-
-  &.selector {
-    color: @purple;
-  }
-
-  &.separator {
-    background-color: @gray;
-    color: @syntax-text-color;
+atom-text-editor , :host {
+  .highlights {
+    .linter-warning .region {
+      border: 1px solid @syntax-color-modified;
+      background-image: none;
+      background-color: fade(saturate(@syntax-color-modified, 50%), 20%);
+    }
+    .linter-error .region {
+      border: 1px solid @syntax-color-removed;
+      background-image: none;
+      background-color: fade(saturate(@syntax-color-removed, 50%), 20%);
+    }
   }
 }
 
-.none {
-  color: @syntax-text-color;
-}
-
-.markup {
-  &.bold {
-    color: @orange;
-    font-weight: bold;
-  }
-
-  &.changed {
-    color: @purple;
-  }
-
-  &.deleted {
-    color: @red;
-  }
-
-  &.italic {
-    color: @purple;
-    font-style: italic;
-  }
-
-  &.heading .punctuation.definition.heading {
-    color: @blue;
-  }
-
-  &.inserted {
-    color: @green;
-  }
-
-  &.list {
-    color: @red;
-  }
-
-  &.quote {
-    color: @orange;
-  }
-
-  &.raw.inline {
-    color: @green;
-  }
-}
-
-.source.gfm .markup {
-  -webkit-font-smoothing: auto;
-  &.heading {
-    color: @green;
-  }
-}
-
-atom-text-editor[mini] .scroll-view,
-:host([mini]) .scroll-view {
-  padding-left: 1px;
+.bracket-matcher .region {
+  border: 1px solid rgba(222, 149, 54, 0.4);
+  border-radius: 3px;
+  background-color: rgba(255, 217, 0, 0.2);
+  z-index: 100;
 }
