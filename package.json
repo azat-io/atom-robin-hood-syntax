@@ -1,7 +1,7 @@
 {
   "name": "robin-hood-syntax",
   "theme": "syntax",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Robin Hood's syntax theme for Atom",
   "keywords": [
     "syntax",
