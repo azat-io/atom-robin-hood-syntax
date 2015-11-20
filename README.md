@@ -1,5 +1,15 @@
-# atom-robin-hood-syntax theme
+# Atom Robin Hood's Syntax theme
 
-A short description of your theme.
+<img align="right" width="100" height="100" src="https://github.com/azat-io/atom-robin-hood-syntax/blob/master/images/robincat.jpg?raw=true">
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+Dark syntax theme for Atom Editor from the Sherwood Forest.
+
+Install this theme and activate by going to the Themes section in the Settings and selecting it from the Syntax Themes dropdown menu.
+
+Look at the examples of syntax highlighting:
+
+<img src="https://github.com/azat-io/atom-robin-hood-syntax/blob/master/images/html.png?raw=true">
+
+<img src="https://github.com/azat-io/atom-robin-hood-syntax/blob/master/images/css.png?raw=true">
+
+<img src="https://github.com/azat-io/atom-robin-hood-syntax/blob/master/images/js.png?raw=true">
