@@ -1,6 +1,6 @@
 # Atom Robin Hood's Syntax theme
 
-<img align="right" width="100" height="100" src="https://github.com/azat-io/atom-robin-hood-syntax/blob/master/images/robincat.jpg?raw=true">
+<img align="right" width="135" height="135" src="https://github.com/azat-io/atom-robin-hood-syntax/blob/master/images/robincat.jpg?raw=true">
 
 Dark syntax theme for Atom Editor from the Sherwood Forest.
 
